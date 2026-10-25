@@ -1,0 +1,152 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer base {
+  :root {
+    --background: #0B1020;
+    --foreground: #F4F7FB;
+    --card: #121A2D;
+    --card-foreground: #F4F7FB;
+    --card-elevated: #182338;
+    --border: #22324D;
+    --primary: #27D3E8;
+    --primary-foreground: #0B1020;
+    --secondary: #8B7CFF;
+    --secondary-foreground: #FFFFFF;
+    --muted: #A8B4C8;
+    --muted-foreground: #7E8DA5;
+    --accent: #27D3E8;
+    --accent-foreground: #0B1020;
+    --destructive: #EF4444;
+    --destructive-foreground: #FFFFFF;
+    --success: #10B981;
+    --warning: #F59E0B;
+  }
+
+  .light {
+    --background: #F4F7FB;
+    --foreground: #0B1020;
+    --card: #FFFFFF;
+    --card-foreground: #0B1020;
+    --card-elevated: #F0F4FA;
+    --border: #D2DCEB;
+    --primary: #0299AF;
+    --primary-foreground: #FFFFFF;
+    --secondary: #6C59E8;
+    --secondary-foreground: #FFFFFF;
+    --muted: #5A6982;
+    --muted-foreground: #7E8DA5;
+    --accent: #0299AF;
+    --accent-foreground: #FFFFFF;
+    --destructive: #DC2626;
+    --destructive-foreground: #FFFFFF;
+    --success: #059669;
+    --warning: #D97706;
+  }
+}
+
+* {
+  border-color: var(--border);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Custom modern scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(11, 16, 32, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #22324D;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #32486A;
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background: rgba(18, 26, 45, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-elevated {
+  background: rgba(24, 35, 56, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(39, 211, 232, 0.2);
+}
+
+.glass-dropdown {
+  background: rgba(18, 26, 45, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Subtle glow effects */
+.glow-cyan {
+  box-shadow: 0 0 20px rgba(39, 211, 232, 0.25);
+}
+
+.glow-violet {
+  box-shadow: 0 0 20px rgba(139, 124, 255, 0.25);
+}
+
+.glow-cyan-border {
+  border-color: rgba(39, 211, 232, 0.5);
+  box-shadow: 0 0 15px rgba(39, 211, 232, 0.2);
+}
+
+.glow-violet-border {
+  border-color: rgba(139, 124, 255, 0.5);
+  box-shadow: 0 0 15px rgba(139, 124, 255, 0.2);
+}
+
+/* Gradient text */
+.text-gradient-cyan-violet {
+  background: linear-gradient(135deg, #27D3E8 0%, #8B7CFF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-violet-cyan {
+  background: linear-gradient(135deg, #8B7CFF 0%, #27D3E8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Pulse radar ring */
+@keyframes ping-slow {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+}
+
+.animate-ping-slow {
+  animation: ping-slow 2.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
